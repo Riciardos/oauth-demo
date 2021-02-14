@@ -1,4 +1,10 @@
 com/matchesfashion/oauthdemo/OauthDemoApplication.java
  com.matchesfashion.oauthdemo.OauthDemoApplication
+com/matchesfashion/oauthdemo/SecurityConfig.java
+ com.matchesfashion.oauthdemo.SecurityConfig
+com/matchesfashion/oauthdemo/data/AuthorizationCode.java
+ com.matchesfashion.oauthdemo.data.AuthorizationCode
+com/matchesfashion/oauthdemo/data/AccessToken.java
+ com.matchesfashion.oauthdemo.data.AccessToken
 com/matchesfashion/oauthdemo/OAuthController.java
  com.matchesfashion.oauthdemo.OAuthController
