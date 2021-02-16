@@ -48,7 +48,7 @@ const sendMessage = async (message) => {
         return
     }
     const idToken = window.googleUser.getAuthResponse().id_token;
-    await fetch("http://localhost:8080/api/post-message",
+    await fetch("http://www.ricardoschuller.com/api/post-message",
         {
             method: 'post',
             headers: new Headers({
@@ -68,7 +68,7 @@ const fetchMessages = async (state, setState) => {
     }
 
     const idToken = window.googleUser.getAuthResponse().id_token;
-    await fetch("http://localhost:8080/api/get-messages",
+    await fetch("http://www.ricardoschuller.com/api/get-messages",
         {
             method: 'get',
             headers: new Headers({
@@ -133,7 +133,7 @@ const ChatWindow = () => {
                         }).map((chatMessage) => (
                             <ListItem button key={chatMessage.principal.name}>
                                 <ListItemIcon>
-                                    <Avatar alt={chatMessage.principal.name} />
+                                    <Avatar alt={chatMessage.principal.name} src={googleUser.getBasicProfile().getImageUrl()}/>
                                 </ListItemIcon>
                                 <ListItemText primary={chatMessage.principal.name}></ListItemText>
                             </ListItem>

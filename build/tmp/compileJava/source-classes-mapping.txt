@@ -20,11 +20,7 @@ com/matchesfashion/oauthdemo/OauthDemoApplication.java
  com.matchesfashion.oauthdemo.OauthDemoApplication
 com/matchesfashion/oauthdemo/security/JwtAuthProvider.java
  com.matchesfashion.oauthdemo.security.JwtAuthProvider
-com/matchesfashion/oauthdemo/controller/WebConfig.java
- com.matchesfashion.oauthdemo.controller.WebConfig
 com/matchesfashion/oauthdemo/data/ChatMessage.java
  com.matchesfashion.oauthdemo.data.ChatMessage
 com/matchesfashion/oauthdemo/security/UserPrincipal.java
  com.matchesfashion.oauthdemo.security.UserPrincipal
-com/matchesfashion/oauthdemo/controller/HomeController.java
- com.matchesfashion.oauthdemo.controller.HomeController
