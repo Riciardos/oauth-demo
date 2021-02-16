@@ -25,16 +25,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("user").password("password").roles("USER")
-                .and().withUser("admin").password("secret").roles("ADMIN");
-
         JwtAuthProvider jwtJksAuthProvider = new JwtAuthProvider(jwksJwtDecoder);
         auth.authenticationProvider(jwtJksAuthProvider);
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors().and()
+        http.headers().contentTypeOptions().disable().and().cors().and()
                 .csrf().disable()
                 // ensure stateless session with no stored state
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -51,8 +48,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                 // enable non-authenticated requests to health check and info end-points
                 .antMatchers(HttpMethod.GET, "/actuator/health").permitAll()
                 .antMatchers(HttpMethod.GET, "/actuator/info").permitAll()
-                // all other requests must be authenticated
-                .anyRequest().authenticated();
+                .antMatchers("/public/**").permitAll()
+                // all api requests must be authenticated
+                .antMatchers("/api/**").authenticated();
     }
 
     @Bean

@@ -1,10 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import SignIn from "./SignIn";
-import GetAuthCode from "./GetAuthCode";
 import ChatWindow from "./ChatWindow";
-import Box from "@material-ui/core/Box";
-import Container from "@material-ui/core/Container";
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";

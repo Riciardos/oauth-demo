@@ -1,8 +1,7 @@
-import React, {useState, useEffect} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, {useEffect, useState} from 'react';
+import {makeStyles} from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import Divider from '@material-ui/core/Divider';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
@@ -13,7 +12,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 import Fab from '@material-ui/core/Fab';
 import SendIcon from '@material-ui/icons/Send';
-import Container from "@material-ui/core/Container";
 import moment from 'moment';
 
 const useStyles = makeStyles({
@@ -50,7 +48,7 @@ const sendMessage = async (message) => {
         return
     }
     const idToken = window.googleUser.getAuthResponse().id_token;
-    await fetch("http://localhost:8080/post-message",
+    await fetch("http://localhost:8080/api/post-message",
         {
             method: 'post',
             headers: new Headers({
@@ -70,7 +68,7 @@ const fetchMessages = async (state, setState) => {
     }
 
     const idToken = window.googleUser.getAuthResponse().id_token;
-    await fetch("http://localhost:8080/get-messages",
+    await fetch("http://localhost:8080/api/get-messages",
         {
             method: 'get',
             headers: new Headers({
@@ -130,7 +128,7 @@ const ChatWindow = () => {
                     </Grid>
                     <Divider />
                     <List>
-                        {state.messages.filter((value, index, self) => {
+                        {state.messages && state.messages.filter((value, index, self) => {
                             return self.findIndex(v => v.principal.userId === value.principal.userId) === index;
                         }).map((chatMessage) => (
                             <ListItem button key={chatMessage.principal.name}>

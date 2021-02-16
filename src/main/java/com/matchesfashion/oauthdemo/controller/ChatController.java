@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@RestController()
 @CrossOrigin("http://localhost:3000")
 public class ChatController {
 
@@ -20,12 +20,12 @@ public class ChatController {
     private ChatService chatService;
 
 
-    @RequestMapping(value = "/get-messages", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/get-messages", method = RequestMethod.GET)
     public ResponseEntity<List<ChatMessage>> getMessage() {
         return ResponseEntity.of(Optional.of(chatService.getAllMessages()));
     }
 
-    @RequestMapping(value = "/post-message", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/post-message", method = RequestMethod.POST)
     public void postMessage(@AuthenticationPrincipal UserPrincipal userPrincipal,
                             @RequestBody String message) {
         ChatMessage chatMessage = new ChatMessage();
