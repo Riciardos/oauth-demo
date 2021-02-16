@@ -1,10 +1,30 @@
-com/matchesfashion/oauthdemo/OauthDemoApplication.java
- com.matchesfashion.oauthdemo.OauthDemoApplication
-com/matchesfashion/oauthdemo/SecurityConfig.java
- com.matchesfashion.oauthdemo.SecurityConfig
-com/matchesfashion/oauthdemo/data/AuthorizationCode.java
- com.matchesfashion.oauthdemo.data.AuthorizationCode
 com/matchesfashion/oauthdemo/data/AccessToken.java
  com.matchesfashion.oauthdemo.data.AccessToken
-com/matchesfashion/oauthdemo/OAuthController.java
- com.matchesfashion.oauthdemo.OAuthController
+com/matchesfashion/oauthdemo/security/SecurityConfig.java
+ com.matchesfashion.oauthdemo.security.SecurityConfig
+com/matchesfashion/oauthdemo/security/TokenParser.java
+ com.matchesfashion.oauthdemo.security.TokenParser
+com/matchesfashion/oauthdemo/service/GithubClient.java
+ com.matchesfashion.oauthdemo.service.GithubClient
+com/matchesfashion/oauthdemo/controller/ChatController.java
+ com.matchesfashion.oauthdemo.controller.ChatController
+com/matchesfashion/oauthdemo/service/ChatService.java
+ com.matchesfashion.oauthdemo.service.ChatService
+com/matchesfashion/oauthdemo/security/JwtAuthFilter.java
+ com.matchesfashion.oauthdemo.security.JwtAuthFilter
+com/matchesfashion/oauthdemo/data/AuthorizationCode.java
+ com.matchesfashion.oauthdemo.data.AuthorizationCode
+com/matchesfashion/oauthdemo/security/JwksJwtDecoder.java
+ com.matchesfashion.oauthdemo.security.JwksJwtDecoder
+com/matchesfashion/oauthdemo/security/JwtAuthToken.java
+ com.matchesfashion.oauthdemo.security.JwtAuthToken
+com/matchesfashion/oauthdemo/OauthDemoApplication.java
+ com.matchesfashion.oauthdemo.OauthDemoApplication
+com/matchesfashion/oauthdemo/security/JwtAuthProvider.java
+ com.matchesfashion.oauthdemo.security.JwtAuthProvider
+com/matchesfashion/oauthdemo/controller/OAuthController.java
+ com.matchesfashion.oauthdemo.controller.OAuthController
+com/matchesfashion/oauthdemo/data/ChatMessage.java
+ com.matchesfashion.oauthdemo.data.ChatMessage
+com/matchesfashion/oauthdemo/security/UserPrincipal.java
+ com.matchesfashion.oauthdemo.security.UserPrincipal

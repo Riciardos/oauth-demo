@@ -1,7 +1,9 @@
-package com.matchesfashion.oauthdemo;
+package com.matchesfashion.oauthdemo.controller;
 
 import com.matchesfashion.oauthdemo.data.AccessToken;
 import com.matchesfashion.oauthdemo.data.AuthorizationCode;
+import com.matchesfashion.oauthdemo.service.GithubClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,10 +22,13 @@ public class OAuthController
         return ResponseEntity.of(Optional.of("Hello and welcome to my demo"));
     }
 
+    @Autowired
+    GithubClient githubClient;
 
     @RequestMapping("/authorizationcode")
     public ResponseEntity<AuthorizationCode> authorizationCode() {
-        AuthorizationCode code = new AuthorizationCode("testcode");
+        String authCode = githubClient.getAuthorizationCode();
+        AuthorizationCode code = new AuthorizationCode(authCode);
         return ResponseEntity.of(Optional.of(code));
     }
 

@@ -78,7 +78,6 @@ export default function GetAuthCode() {
             Token: {state.token}
 
             <br/>
-            <div className="g-signin2" data-onsuccess="onSignIn"></div>
 
         </Container>
     );
